@@ -1,0 +1,167 @@
+<html>
+<head>
+<div>
+<img src="pu.png" height="199" width="200" style="float:left;align:inline;margin-left:30px;">
+<img src="jf.png" height="199" width="260" style="float:right;align:inline;margin-right:30px;">
+<h2 style="text-align:center;color:black;font-size:50px;">PRESIDENCY UNIVERSITY <br>
+JOB FAIR 2020<br> REGISTERATION FORM</h2>
+<div>
+<br>
+</head>
+<style>
+.button {
+  background-color: #052951;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 26px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style><body>
+<form action="/action_page.php" style="border:10px solid #052951 ;font-size:26px;color:purple;padding:60px;border-width:40px;"   onsubmit="valiForm()" onsubmit="validateForm()" onsumbit="ValidateForm()" method="post" id="myForm" >
+<fieldset >
+<legend style="color:red";>Personal Details</legend>
+<br>
+First name:<input type="text" name="first_name" required>
+<br><br>
+Last name:<input type="text" name="last_name" required>
+<br><br>
+Email address:<input type="email" name="mail" required>
+<br><br>
+
+
+<input type="radio" id="gen" value="gen" name="gen1">
+<label for="gen">Male</label>
+<input type="radio" id="gen" value="gen" name="gen1">
+<label for="gen">Female</label>
+<input type="radio" id="gen" value="gen" name="gen1">
+<label for="gen">Other</label>
+<br><br>
+
+Phone number:<input type="tel" name="phone" required>
+<br><br>
+
+
+Residential Address:<br>
+<textarea rows="5" cols="50">
+#Address goes here...
+</textarea><input type="reset"><br><br>
+</fieldset><br><br>
+
+<fieldset>
+<legend style="color:red;">Upload Section</legend><br>
+  <label for="img">Upload Photo:</label><br>
+  <input type="file" id="img" name="img" accept="image/*" > <br><br>
+  <label for="img">Upload Resume:</label><br>
+  <input type="file" id="img" name="img" accept="image/*" ><br><br>
+  <label for="img">Upload Signature:</label><br>
+  <input type="file" id="img" name="img" accept="image/*" >
+</fieldset><br><br>
+
+<fieldset>
+<legend style="color:red;">Marks Section</legend><br>
+SSLC:<input type="digit" maxlength="2" min="0" max="99" placeholder="only two digit percentage" required><br><br>
+PUC:<input type="digit" maxlength="2" min="0" max="99" placeholder="only two digit percentage" required><br><br>
+Degree:
+<select id="grade" required><option>--Select--</option>
+<option value="grade">O</option>
+<option value="grade">A</option>
+<option value="grade">B</option>
+<option value="grade">C</option>
+</select>
+</fieldset><br><br>
+
+
+
+<fieldset id="branch">
+<legend style="color:red;">Specialization</legend><br>
+Select Your Specialization:
+<select id="branch" name="branch" >
+<option value="" name="branches" id="branch">None</option>
+<option value="cse" id="branch" name="branch">CSE</option>
+<option value="bran" id="branch" name="branch">IT</option>
+<option value="branc" id="branch" name="branch">ECE</option>
+<option value="bra" id="branch" name="branch">EEE</option>
+<option value="br" id="branch" name="branch">CIVIL</option>
+<option value="brah" id="branch" name="branch">MECHANICAL</option>
+</select>
+
+<script>
+function valiForm(){
+  var x = document.forms["myForm"]["branch"].value;
+  if (x== "" ){
+    alert("Please select branch");
+    return false;
+  }
+  return true;
+  
+}
+</script>
+</fieldset><br><br>
+ 
+<fieldset id="date">
+<legend style="color:red;">DOB & YOG</legend><br>
+
+<label for="birthday">Date of Birth:</label>
+<input type="date" id="birthday" name="birthday">
+<br><br>
+
+
+<label>Year of graduation:</label>
+  <input type="year" name="fname" min=2020 max=2022 maxlength=4>
+
+  <input type="reset">
+
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x!=2022) {
+    alert("Not Eligible To Register");
+    return false;
+  }
+  return true;
+  
+}
+</script></fieldset><br><br>
+
+<fieldset>
+<legend style="color:red;">Technical skills</legend>
+Select Technical Skills:<br>
+ <input type="checkbox" id="skill1" name="skill" value="C"><label for="skill1">C</label><br>
+
+<input type="checkbox" id="skill2" name="skill" value="C++"><label for="skill2">C++</label><br>
+
+<input type="checkbox" id="skill3" name="skill" value="java"><label for="skill3">Java</label><br>
+
+<input type="checkbox" id="skill4" name="skill" value="SQL"><label for="skill4">SQL</label><br>
+
+<input type="checkbox" id="skill5" name="skill" value="pyth"><label for="skill5">Python</label>
+
+
+<script>
+function ValidateForm(form){
+ErrorText= "";
+if ( ( form.skill[0].checked == false ) && ( form.skill[1].checked == false ) && ( form.skill[2].checked == false ) && ( form.skill[3].checked == false ) && ( form.skill[4].checked == false )  )
+{
+alert ( "Please choose atleast one skill" );
+return false;
+}
+if (ErrorText= "") { form.submit() }
+}
+</script>
+</fieldset><br><br>
+
+<div style="text-align:center;margin-top:50px;">
+<input type="submit" name="SubmitButton" class="button" value="Submit" onClick="ValidateForm(this.form)"> &nbsp;&nbsp; &nbsp; 
+<input type="reset" value="Reset" class="button">
+<div>
+
+
+
+
+</form>
+</body></html>
